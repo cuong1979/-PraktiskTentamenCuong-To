@@ -49,16 +49,16 @@ Country.prototype.getland = function (land){
     body.appendChild(h2land);
     
 }
+
+//uträkningen på time
 Country.prototype.getTime = function(time) {
     let substring = time;
     let addOrSub = substring.substr(3, 1)
     let substring2 = substring.substr(4, 5)
 
     if (addOrSub == '+') {
-
-
+        
         let num = parseInt(substring2);
-
         let date = new Date();
         let changeDate = date.getUTCHours() + num;
         changeDate = `${changeDate} ${date.getUTCMinutes()}`
@@ -67,15 +67,12 @@ Country.prototype.getTime = function(time) {
         h3Times.innerText = changeDate;
         body.appendChild(h3Times);
     } else {
-
-
+        
         let num = parseInt(substring2);
-
         let date = new Date();
         let changeDate = date.getUTCHours() - num;
         changeDate = `${changeDate} ${date.getUTCMinutes()}`
         this.time = changeDate;
-
         let h3Times = document.createElement('h3');
         h3Times.innerText = changeDate;
         body.appendChild(h3Times);
@@ -90,8 +87,6 @@ Country.prototype.getFlag = function (flag){
     body.appendChild(img);
     img.style.width = "150px";
 
-   
-    
 }
 
 
