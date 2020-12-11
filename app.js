@@ -1,5 +1,7 @@
+// Api adress
 const URL = 'https://restcountries.eu/rest/v2/all'
 
+// 
 fetch(URL).then(function(response){
     console.log(response);
     return response.json();
@@ -7,7 +9,7 @@ fetch(URL).then(function(response){
 }).then(function(data){
     // console.log(data);
 
-   
+   // loopa ut tre länder och sumpa tre länder
     for(let i = 0; i<3; i++){
         let randLand =  Math.floor(Math.random()* data.length);
         
@@ -36,12 +38,11 @@ fetch(URL).then(function(response){
 function Country (_name, _tid, _flag){
     this.name = _name;
     this.tid = _tid;
-    this.flag = _flag
+    this.flag = _flag;
 }
 
+// skapa prototype
 let body = document.querySelector('body');
-
-
 Country.prototype.getland = function (land){
     let h2land = document.createElement('h2');
     h2land.innerText = land;
@@ -82,8 +83,6 @@ Country.prototype.getTime = function(time) {
     }
     
 }
-
-
 
 Country.prototype.getFlag = function (flag){
     let img = document.createElement("img");
